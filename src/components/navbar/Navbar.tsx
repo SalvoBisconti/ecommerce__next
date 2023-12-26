@@ -13,6 +13,8 @@ const Navbar = () => {
           display="md:flex hidden"
           icon="flex"
           text="Cosa stai cercando?"
+          width="md:w-[30vw]"
+          reverseText="md:flex-row-reverse"
         />
         <div className="flex  w-[32vw] md:w-[10%] h-[80%] md:h-[50%] justify-between md:text-[24px] text-[20px]    ">
           <div className="flex w-[55%]  justify-between ">
@@ -27,7 +29,13 @@ const Navbar = () => {
           <RxHamburgerMenu className="text-[24px]" />
           <h2 className=" md:hidden text-[14px]"> MENU</h2>
         </div>
-        <SearchEl display="md:hidden" icon="flex" text="Cosa stai cercando?" />
+        <SearchEl
+          display="md:hidden"
+          icon="flex"
+          text="Cosa stai cercando?"
+          width="md:w-[30vw]"
+          reverseText="md:flex-row-reverse"
+        />
       </div>
     </div>
   );
