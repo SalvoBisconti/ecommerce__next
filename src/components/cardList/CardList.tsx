@@ -1,7 +1,9 @@
+import Card from "../card";
+
 const CardList = () => {
   return (
-    <div>
-      <h2>CardList</h2>
+    <div className="flex flex-col justify-center items-center flex-wrap">
+      <Card />
     </div>
   );
 };
