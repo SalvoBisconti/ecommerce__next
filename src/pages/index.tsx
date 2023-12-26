@@ -1,5 +1,6 @@
 import CardList from "@/components/cardList";
 import FilterArea from "@/components/filterArea";
+import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import NewletterArea from "@/components/newletterArea";
 
@@ -10,6 +11,7 @@ export default function Home() {
       <FilterArea />
       <CardList />
       <NewletterArea />
+      <Footer />
     </main>
   );
 }
