@@ -18,6 +18,7 @@ const config: Config = {
       first: "#ffffff",
       second: "#f8f8f8",
       red: "#e22018",
+      black: "#28282B",
     },
     fontSize: {
       paraph: "1.5rem",
