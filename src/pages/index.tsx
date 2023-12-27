@@ -6,7 +6,7 @@ import NewletterArea from "@/components/newletterArea";
 
 export default function Home() {
   return (
-    <main className={`flex min-h-screen flex-col items-center gap-8  `}>
+    <main className={`flex min-h-screen flex-col items-center gap-8 bg-first `}>
       <Navbar />
       <FilterArea />
       <CardList />
