@@ -1,28 +1,32 @@
 import { cardType } from "@/mocks/types";
 import { IoMdHeartEmpty } from "react-icons/io";
+import { useRouter } from "next/router";
 
-export const Card = () => {
-  const prova: cardType = {
-    id: 108,
-    title: "changed!",
-    price: 10,
-    description: "A description",
-    images: ["https://i.imgur.com/1twoaDy.jpeg"],
-    category: {
-      id: 1,
-      name: "Clothes",
-      image: "https://i.imgur.com/QkIa5tT.jpeg",
-    },
+export const Card = (props: { data: cardType }) => {
+  const { data } = props;
+
+  const router = useRouter();
+
+  const onHandleOpenSingleItem = (): any => {
+    router.push({
+      pathname: "product",
+      query: {
+        id: data.id,
+      },
+    });
   };
 
   return (
-    <div className="h-[40vh] w-[85vw] relative flex flex-col justify-center shadow-md rounded-md ">
+    <div
+      className="h-[40vh] w-[85vw] relative flex flex-col justify-center shadow-md rounded-md "
+      onClick={onHandleOpenSingleItem}
+    >
       <div className="h-[50%] md:w-[50%] relative ">
         <div className="z-10 absolute top-0 right-0 w-full h-full bg-[#00000015]"></div>
         <img
           className="w-[100%] h-[100%] object-fill rounded-t-md "
-          src={prova.images[0]}
-          alt={prova.title}
+          src={data.images[0]}
+          alt={data.title}
         />
         <div className="h-[35px] w-[35px] absolute rounded-full bg-second top-2 right-2 flex justify-center items-center z-20 ">
           <IoMdHeartEmpty className="text-[26px]" />
@@ -32,11 +36,10 @@ export const Card = () => {
         </div>
       </div>
       <div className=" h-[50%] flex flex-col justify-center items-center">
-        <h3 className="font-bold"> {prova.title}</h3>
-        <h3>{prova.description}</h3>
+        <h3 className="font-bold"> {data.title}</h3>
+        <h3>{data.description}</h3>
         <h4>
-          {" "}
-          {prova.price} {"€"}
+          {data.price} {"€"}
         </h4>
       </div>
     </div>

@@ -20,6 +20,7 @@ const config: Config = {
       red: "#e22018",
       black: "#28282B",
       stronGray: "#cacaca",
+      green: "#008000",
     },
     fontSize: {
       paraph: "1.5rem",

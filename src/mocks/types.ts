@@ -9,5 +9,9 @@ export interface cardType {
   price: number;
   description: string;
   images: string[];
-  category: categoryType;
+  category: categoryType | any;
 }
+
+export type LayoutProps = {
+  children: JSX.Element[];
+};
