@@ -11,7 +11,7 @@ const CardList = () => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center flex-wrap">
+    <div className="flex flex-col justify-center items-center flex-wrap gap-8 md:flex-row">
       {productsData.map((product) => (
         <Card data={product} key={product.id} />
       ))}

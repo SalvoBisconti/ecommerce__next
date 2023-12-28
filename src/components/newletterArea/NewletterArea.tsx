@@ -3,7 +3,7 @@ import SearchEl from "../searchEl";
 
 const NewletterArea = () => {
   return (
-    <div className="w-screen bg-stronGray  flex flex-col p-6 gap-4 md:flex-row md:p-10 md:justify-center md:items-center">
+    <div className="w-screen bg-stronGray  flex flex-col p-6 gap-4 md:flex-row md:p-10 md:justify-center md:items-center -mb-10">
       <h2 className="font-bold text-[30px] w-[200px]">
         Iscriviti alla Newsletters
       </h2>
@@ -14,7 +14,7 @@ const NewletterArea = () => {
         width="md:w-[20vw]"
         reverseText=""
       />
-      <Button text="ISCRIVITI" />
+      <Button text="ISCRIVITI" width="" position="" />
       <div className="flex gap-2 md:w-[25%]  ">
         <input
           type="checkbox"

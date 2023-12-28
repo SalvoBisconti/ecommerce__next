@@ -1,7 +1,9 @@
-const Button = (props: { text: string }) => {
-  const { text } = props;
+const Button = (props: { text: string; width: string; position: string }) => {
+  const { text, width, position } = props;
   return (
-    <button className=" text-center font-bold bg-black text-first p-4 md:w-[20vw]">
+    <button
+      className={`text-center font-bold bg-black text-first p-4 ${width} text-[14px] md:w-[20vw] ${position}`}
+    >
       {text}
     </button>
   );

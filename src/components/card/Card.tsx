@@ -18,10 +18,10 @@ export const Card = (props: { data: cardType }) => {
 
   return (
     <div
-      className="h-[40vh] w-[85vw] relative flex flex-col justify-center shadow-md rounded-md "
+      className="h-[400px] w-[315px] relative flex flex-col justify-center shadow-md rounded-md cursor-pointer "
       onClick={onHandleOpenSingleItem}
     >
-      <div className="h-[50%] md:w-[50%] relative ">
+      <div className="h-[50%] relative ">
         <div className="z-10 absolute top-0 right-0 w-full h-full bg-[#00000015]"></div>
         <img
           className="w-[100%] h-[100%] object-fill rounded-t-md "

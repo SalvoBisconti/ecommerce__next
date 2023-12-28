@@ -27,42 +27,65 @@ const PageCard = () => {
   };
 
   return (
-    <div className="flex flex-col border-2">
-      <div>
-        <img src={a.images[0]} alt={a.title} className="w-[80%]" />
-        <h3>Home / Donna / {a.title}</h3>
+    <div className="flex flex-col  p-4">
+      <div className="flex flex-col gap-2">
+        <img
+          src={a.images[0]}
+          alt={a.title}
+          className="w-[90%] self-center shadow-sm shadow-stronGray"
+        />
+        <h3 className="mt-4">Home / Donna / {a.title}</h3>
         <h3 className="font-bold">{a.category.name}</h3>
-        <h2 className="font-bold"> {a.title}</h2>
-        <div className="flex justify-between">
-          <h3 className="text-red">
-            {" "}
-            {a.price} {"€"}{" "}
-          </h3>
-          <h3> {a.price}</h3>
+        <h2 className="font-bold text-[32px]"> {a.title}</h2>
+        <div>
+          <h3>Codice: {a.category.name}</h3>
+          <h3>Garanzia: 24 mesi</h3>
         </div>
-
-        <hr className="bg-stronGray w-[99%] h-[2px] border-0" />
+        <div className="flex justify-between">
+          <h3 className="text-red text-[20px]">
+            {a.price} {"€"}
+          </h3>
+          <div className="flex gap-2 items-center">
+            <h3 className="line-through text-[19px]">{a.price}</h3>
+            <h3 className="bg-green text-first px-3 py-1 rounded">-15%</h3>
+          </div>
+        </div>
+        <hr className="bg-stronGray w-[99%] h-[2px] border-0 mt-3" />
         <div className="flex gap-2 items-center">
           <BsBoxSeam className="fill-green rotate-[-10deg]" />
           <h3 className="text-green">Disponibile </h3>
         </div>
         <hr className="bg-stronGray w-[99%] h-[2px] border-0" />
-        <Button text="AGGIUNGI AL CARRELLO" />
+        <div className="flex gap-2 items-center  self-center mb-3  ">
+          <h3>MISURA</h3>
+          <select
+            name="width"
+            id="width"
+            className=" h-[40px] border-2 border-stronGray  p-2 outline-none rounded cursor-pointer"
+          >
+            <option value="38.5">EU 38.5</option>
+          </select>
+        </div>
+        <Button
+          text="AGGIUNGI AL CARRELLO"
+          width="w-[60%]"
+          position=" self-center"
+        />
       </div>
-      <div>
+      <div className="my-12">
         <h3>PUNTI DI FORZA</h3>
-        <ul className="bg-second font-medium">
-          <li className="flex items-center gap-6">
+        <ul className="flex flex-col bg-second font-medium [&>li]:p-5 [&>li]:gap-6 [&>li]:flex [&>li]:items-center ">
+          <li>
             <AiTwotoneSafetyCertificate />
             <span> Lorem ipsum dolor</span>
           </li>
-          <hr className="bg-stronGray w-[99%] h-[2px] border-0" />
-          <li className="flex items-center gap-6">
+          <hr className="bg-stronGray w-[90%] h-[2px] border-0 self-center" />
+          <li>
             <AiTwotoneSafetyCertificate />
             <span> Sit amet consectetur</span>
           </li>
-          <hr className="bg-stronGray w-[99%] h-[2px] border-0" />
-          <li className="flex items-center gap-6">
+          <hr className="bg-stronGray w-[90%] h-[2px] border-0 self-center" />
+          <li>
             <AiTwotoneSafetyCertificate />
             <span> Adipisicing elit libero</span>
           </li>
@@ -70,7 +93,7 @@ const PageCard = () => {
       </div>
 
       <div className="flex flex-col gap-3">
-        <h2 className="font-bold">Descrizione</h2>
+        <h2 className="font-bold text-[30px]">Descrizione</h2>
         <p>{a.description}</p>
 
         <h3 className="font-bold"> Vantaggi</h3>
