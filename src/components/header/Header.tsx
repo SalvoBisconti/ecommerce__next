@@ -4,7 +4,7 @@ import { MdFavoriteBorder } from "react-icons/md";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { RxHamburgerMenu } from "react-icons/rx";
 
-const Navbar = () => {
+const Header = () => {
   return (
     <div className=" h-[100px] w-screen flex flex-col justify-between md:flex-row py-1 gap-2 ">
       <div className="flex justify-between items-center  w-screen h-[50%] md:h-[100%]  p-2 ">
@@ -41,4 +41,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;

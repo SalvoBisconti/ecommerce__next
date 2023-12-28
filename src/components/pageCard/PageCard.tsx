@@ -1,4 +1,6 @@
 import { BsBoxSeam } from "react-icons/bs";
+import Button from "../button";
+import { AiTwotoneSafetyCertificate } from "react-icons/ai";
 
 const PageCard = () => {
   const a = {
@@ -29,8 +31,8 @@ const PageCard = () => {
       <div>
         <img src={a.images[0]} alt={a.title} className="w-[80%]" />
         <h3>Home / Donna / {a.title}</h3>
-        <h3>{a.category.name}</h3>
-        <h2> {a.title}</h2>
+        <h3 className="font-bold">{a.category.name}</h3>
+        <h2 className="font-bold"> {a.title}</h2>
         <div className="flex justify-between">
           <h3 className="text-red">
             {" "}
@@ -39,10 +41,51 @@ const PageCard = () => {
           <h3> {a.price}</h3>
         </div>
 
+        <hr className="bg-stronGray w-[99%] h-[2px] border-0" />
         <div className="flex gap-2 items-center">
           <BsBoxSeam className="fill-green rotate-[-10deg]" />
           <h3 className="text-green">Disponibile </h3>
         </div>
+        <hr className="bg-stronGray w-[99%] h-[2px] border-0" />
+        <Button text="AGGIUNGI AL CARRELLO" />
+      </div>
+      <div>
+        <h3>PUNTI DI FORZA</h3>
+        <ul className="bg-second font-medium">
+          <li className="flex items-center gap-6">
+            <AiTwotoneSafetyCertificate />
+            <span> Lorem ipsum dolor</span>
+          </li>
+          <hr className="bg-stronGray w-[99%] h-[2px] border-0" />
+          <li className="flex items-center gap-6">
+            <AiTwotoneSafetyCertificate />
+            <span> Sit amet consectetur</span>
+          </li>
+          <hr className="bg-stronGray w-[99%] h-[2px] border-0" />
+          <li className="flex items-center gap-6">
+            <AiTwotoneSafetyCertificate />
+            <span> Adipisicing elit libero</span>
+          </li>
+        </ul>
+      </div>
+
+      <div className="flex flex-col gap-3">
+        <h2 className="font-bold">Descrizione</h2>
+        <p>{a.description}</p>
+
+        <h3 className="font-bold"> Vantaggi</h3>
+        <ul className="list-disc px-4">
+          <li> Lorem ipsum dolor sit amet consectetur adipisicing. </li>
+          <li> Lorem ipsum dolor sit amet consectetur adipisicing. </li>
+          <li> Lorem ipsum dolor sit amet consectetur adipisicing. </li>
+        </ul>
+
+        <h3 className="font-bold"> Dettagli prodotto</h3>
+        <ul className="list-disc px-4">
+          <li> Lorem ipsum dolor sit amet consectetur adipisicing. </li>
+          <li> Lorem ipsum dolor sit amet consectetur adipisicing. </li>
+          <li> Lorem ipsum dolor sit amet consectetur adipisicing. </li>
+        </ul>
       </div>
     </div>
   );

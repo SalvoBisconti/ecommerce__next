@@ -1,3 +1,4 @@
+import Button from "../button";
 import SearchEl from "../searchEl";
 
 const NewletterArea = () => {
@@ -13,9 +14,7 @@ const NewletterArea = () => {
         width="md:w-[20vw]"
         reverseText=""
       />
-      <button className=" text-center font-bold bg-black text-first p-4 md:w-[20vw]">
-        ISCRIVITI
-      </button>
+      <Button text="ISCRIVITI" />
       <div className="flex gap-2 md:w-[25%]  ">
         <input
           type="checkbox"
