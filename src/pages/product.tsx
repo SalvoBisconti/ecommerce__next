@@ -3,6 +3,8 @@ import { useRouter } from "next/router";
 import { GET } from "@/utils/funcs";
 import { cardType } from "@/mocks/types";
 import { useState, useEffect } from "react";
+
+import Carousel from "@/components/carousel";
 import PageCard from "@/components/pageCard";
 
 export default function Product() {
@@ -17,8 +19,9 @@ export default function Product() {
   return (
     <main className={`flex min-h-screen flex-col items-center gap-8 bg-first `}>
       <Layout>
-        <h1> </h1>
         <PageCard />
+        <h2 className="font-bold text-[28px]"> Guarda anche</h2>
+        <Carousel />
       </Layout>
     </main>
   );

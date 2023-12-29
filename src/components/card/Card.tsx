@@ -18,7 +18,7 @@ export const Card = (props: { data: cardType }) => {
 
   return (
     <div
-      className="h-[400px] w-[315px] relative flex flex-col justify-center shadow-md rounded-md cursor-pointer "
+      className="h-[400px] w-[315px] min-w-[315px] relative flex flex-col justify-center shadow-md rounded-md cursor-pointer  "
       onClick={onHandleOpenSingleItem}
     >
       <div className="h-[50%] relative ">
@@ -32,7 +32,7 @@ export const Card = (props: { data: cardType }) => {
           <IoMdHeartEmpty className="text-[26px]" />
         </div>
         <div className="absolute bottom-2 left-2 bg-second p-1 px-2 z-20">
-          <p>Novità</p>
+          <p className="text-[13px]">Novità</p>
         </div>
       </div>
       <div className=" h-[50%] flex flex-col justify-center items-center">
