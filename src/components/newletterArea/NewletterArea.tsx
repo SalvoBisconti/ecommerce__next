@@ -14,7 +14,18 @@ const NewletterArea = () => {
         width="md:w-[20vw]"
         reverseText=""
       />
-      <Button text="ISCRIVITI" width="" position="" />
+      <Button
+        text="ISCRIVITI"
+        width=""
+        position=""
+        textColor="text-first"
+        background="bg-black"
+        icon="hidden"
+        border=""
+        textWidth="text-[14px]"
+        padding="p-4"
+        fontWidth="font-bold"
+      />
       <div className="flex gap-2 md:w-[25%]  ">
         <input
           type="checkbox"

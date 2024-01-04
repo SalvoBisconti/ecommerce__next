@@ -1,6 +1,6 @@
 import List from "../list";
 import PaymentList from "../paymentList";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import Line from "../line";
 
 const Footer = () => {
   return (
@@ -11,6 +11,7 @@ const Footer = () => {
         <div className=" flex flex-col gap-4 md:flex-row">
           <List
             itemName={["Home", "Chi siamo", "Contatti", "Lavora con noi"]}
+            flexOption=""
           />
           <List
             itemName={[
@@ -19,8 +20,12 @@ const Footer = () => {
               "Certificazioni",
               "Sitemap",
             ]}
+            flexOption=""
           />
-          <List itemName={["Privacy Policy", "Cookie Policy", "Credits"]} />
+          <List
+            itemName={["Privacy Policy", "Cookie Policy", "Credits"]}
+            flexOption=""
+          />
         </div>
       </div>
 
@@ -28,10 +33,11 @@ const Footer = () => {
         <PaymentList />
 
         <h3>
-          ITA <p className="font-bold rotate-180 inline-block  "> {"^"}</p>
+          ITA
+          <p className="font-bold rotate-180 inline-block pt-[2px] "> {"^"}</p>
         </h3>
       </div>
-      <hr className="bg-stronGray w-[99%] h-[2px] border-0" />
+      <Line width="w-[99%]" selfCenter="" />
       <p className="text-[12px] text-center">
         ©2023 Logo - Via delle Albere 13, 36045 Vicenza P.IVA 00589040245 -
         Registro Imprese di Vicenza: n.00589040245 - Rea vi:139951 Capitale

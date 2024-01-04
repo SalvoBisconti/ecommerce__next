@@ -1,4 +1,7 @@
 import SearchEl from "../searchEl";
+import List from "../list";
+import Line from "../line";
+
 import { MdAccountCircle } from "react-icons/md";
 import { MdFavoriteBorder } from "react-icons/md";
 import { HiOutlineShoppingCart } from "react-icons/hi";
@@ -7,7 +10,23 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className=" h-[100px] w-screen flex flex-col justify-between md:flex-row py-1 gap-2 ">
+    <div className=" h-[100px] md:h-[140px] w-screen flex flex-col justify-between py-1 gap-3">
+      <div className="hidden md:block w-screen ">
+        <div className="flex justify-between p-2  ">
+          <List
+            itemName={["Chi siamo", "Community", "Brand"]}
+            flexOption="flex gap-5"
+          />
+          <h3 className="">
+            ITA
+            <p className="font-bold rotate-180 inline-block pt-[2px] ml-1">
+              {"^"}
+            </p>
+          </h3>
+        </div>
+        <Line width="w-screen" selfCenter="" />
+      </div>
+
       <div className="flex justify-between items-center  w-screen h-[50%] md:h-[100%]  p-2 ">
         <Link className=" text-red text-[30px] font-bold " href="/">
           LOGO

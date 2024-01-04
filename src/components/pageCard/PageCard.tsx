@@ -1,5 +1,6 @@
 import { BsBoxSeam } from "react-icons/bs";
 import Button from "../button";
+import Line from "../line";
 import { AiTwotoneSafetyCertificate } from "react-icons/ai";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { CgArrowsExpandLeft } from "react-icons/cg";
@@ -54,7 +55,7 @@ const PageCard = () => {
             <h3>Codice: {a.category.name}</h3>
             <h3>Garanzia: 24 mesi</h3>
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-between mb-5">
             <h3 className="text-red text-[20px]">
               {a.price} {"€"}
             </h3>
@@ -63,13 +64,13 @@ const PageCard = () => {
               <h3 className="bg-green text-first px-3 py-1 rounded">-15%</h3>
             </div>
           </div>
-          <hr className="bg-stronGray w-[99%] h-[2px] border-0 mt-3" />
-          <div className="flex gap-2 items-center">
+          <Line width="w-[99%]" selfCenter="" />
+          <div className="flex gap-2 items-center ">
             <BsBoxSeam className="fill-green rotate-[-10deg]" />
             <h3 className="text-green">Disponibile </h3>
           </div>
-          <hr className="bg-stronGray w-[99%] h-[2px] border-0" />
-          <div className="flex flex-col gap-4 items-center  self-center mb-3 md:flex-row  ">
+          <Line width="w-[99%]" selfCenter="" />
+          <div className="flex flex-col gap-4 items-center  self-center mb-3 md:flex-row mt-2  ">
             <div className="flex items-center gap-2">
               <h3>MISURA</h3>
               <select
@@ -84,6 +85,13 @@ const PageCard = () => {
               text="AGGIUNGI AL CARRELLO"
               width="w-[210px]"
               position=" self-center"
+              textColor="text-first"
+              background="bg-black"
+              icon="hidden"
+              border=""
+              textWidth="text-[14px]"
+              padding="p-4"
+              fontWidth="font-bold"
             />
           </div>
           <div className="my-12 md:my-3">
@@ -93,12 +101,12 @@ const PageCard = () => {
                 <AiTwotoneSafetyCertificate />
                 <span> Lorem ipsum dolor</span>
               </li>
-              <hr className="bg-stronGray w-[90%] h-[2px] border-0 self-center" />
+              <Line width="w-[90%] " selfCenter="self-center" />
               <li>
                 <AiTwotoneSafetyCertificate />
                 <span> Sit amet consectetur</span>
               </li>
-              <hr className="bg-stronGray w-[90%] h-[2px] border-0 self-center" />
+              <Line width="w-[90%] " selfCenter="self-center" />
               <li>
                 <AiTwotoneSafetyCertificate />
                 <span> Adipisicing elit libero</span>

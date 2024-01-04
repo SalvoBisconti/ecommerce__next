@@ -25,12 +25,14 @@ const CardList = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center flex-wrap gap-8 md:flex-row">
-      {productsData
-        .slice(selectedPage * 16, (selectedPage + 1) * 16)
-        .map((product) => (
-          <Card data={product} key={product.id} />
-        ))}
+    <div className="flex flex-col gap-12">
+      <div className="flex flex-col justify-center items-center flex-wrap gap-8 md:flex-row">
+        {productsData
+          .slice(selectedPage * 16, (selectedPage + 1) * 16)
+          .map((product) => (
+            <Card data={product} key={product.id} />
+          ))}
+      </div>
 
       <div className="flex justify-center items-center gap-2 ">
         <IoIosArrowBack
