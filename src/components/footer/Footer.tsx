@@ -12,6 +12,7 @@ const Footer = () => {
           <List
             itemName={["Home", "Chi siamo", "Contatti", "Lavora con noi"]}
             flexOption=""
+            fontOption=""
           />
           <List
             itemName={[
@@ -21,10 +22,12 @@ const Footer = () => {
               "Sitemap",
             ]}
             flexOption=""
+            fontOption=""
           />
           <List
             itemName={["Privacy Policy", "Cookie Policy", "Credits"]}
             flexOption=""
+            fontOption=""
           />
         </div>
       </div>

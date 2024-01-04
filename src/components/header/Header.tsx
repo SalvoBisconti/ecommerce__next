@@ -10,12 +10,13 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className=" h-[100px] md:h-[140px] w-screen flex flex-col justify-between py-1 gap-3">
+    <div className=" h-[100px] md:h-[180px] w-screen flex flex-col justify-between py-1 gap-3">
       <div className="hidden md:block w-screen ">
         <div className="flex justify-between p-2  ">
           <List
             itemName={["Chi siamo", "Community", "Brand"]}
             flexOption="flex gap-5"
+            fontOption=""
           />
           <h3 className="">
             ITA
@@ -58,6 +59,15 @@ const Header = () => {
           width="md:w-[30vw]"
           reverseText="md:flex-row-reverse"
         />
+      </div>
+      <div className="w-screen hidden flex-col md:flex">
+        <Line width="w-screen" selfCenter="" />
+        <List
+          itemName={["DONNA", "UOMO", "BAMBINI", "TUTTI GLI ARTICOLI"]}
+          flexOption="flex gap-4 p-2"
+          fontOption="font-semibold text-[14px]"
+        />
+        <Line width="w-screen" selfCenter="" />
       </div>
     </div>
   );

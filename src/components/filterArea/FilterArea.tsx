@@ -12,22 +12,32 @@ const FilterArea = () => {
     <div className="w-screen px-6 flex flex-col mt-8 gap-3">
       <h3> Home / Donna</h3>
       <h2 className="font-bold text-[30px]">Nome categoria</h2>
-      <div className=" gap-4 hidden md:flex">
-        {filterName.length > 0 &&
-          filterName.map((name, index) => (
-            <h2
-              className={`flex justify-between items-center w-[200px] border rounded border-stronGray p-3 cursor-pointer ${
-                isSelected == name && "text-red border-2 border-red font-bold"
-              } `}
-              key={index}
-              onClick={() => onHandleSelect(name)}
-            >
-              {name}
-              <span>
-                <BsFillTriangleFill className="rotate-180 text-[12px] text-lightBlack" />
-              </span>
-            </h2>
-          ))}
+      <div className=" hidden md:flex justify-between">
+        <div className="flex gap-4 ">
+          {filterName.length > 0 &&
+            filterName.map((name, index) => (
+              <h2
+                className={`flex justify-between items-center w-[200px] border rounded border-stronGray p-3 cursor-pointer ${
+                  isSelected == name && "text-red border-2 border-red font-bold"
+                } `}
+                key={index}
+                onClick={() => onHandleSelect(name)}
+              >
+                {name}
+                <span>
+                  <BsFillTriangleFill className="rotate-180 text-[12px] text-lightBlack" />
+                </span>
+              </h2>
+            ))}
+        </div>
+        <div className="flex items-center justify-center gap-2 md:w-[25%]  ">
+          <input
+            type="checkbox"
+            id="disponible_stuff"
+            name="disponible_stuff"
+          />
+          <p className="text-[14px]">Solo disponibili</p>
+        </div>
       </div>
       <Button
         text="Filtri"

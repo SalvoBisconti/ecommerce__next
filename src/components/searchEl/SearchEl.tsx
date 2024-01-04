@@ -11,10 +11,14 @@ const SearchEl = (props: {
 
   return (
     <div
-      className={`flex items-center gap-2 h-[75%] md:h-[50%] ${width} border border-[#D3D3D3] bg-first rounded-md p-4 ${display} ${reverseText} md:justify-between`}
+      className={`flex items-center gap-2 h-[75%] md:h-[50%] ${width} border border-stronGray bg-first rounded-md p-4 ${display} ${reverseText} md:justify-between`}
     >
       <CgSearch className={`${icon}`} />
-      <input className="outline-none" type="text" placeholder={`${text}`} />
+      <input
+        className="outline-none w-[100%]"
+        type="text"
+        placeholder={`${text}`}
+      />
     </div>
   );
 };
