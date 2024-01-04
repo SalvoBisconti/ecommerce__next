@@ -37,7 +37,7 @@ export const Card = (props: { data: cardType }) => {
       </div>
       <div className=" h-[50%] flex flex-col justify-center items-center">
         <h3 className="font-bold"> {data.title}</h3>
-        <h3>{data.description}</h3>
+        <h3 className="p-4">{data.description}</h3>
         <h4>
           {data.price} {"€"}
         </h4>

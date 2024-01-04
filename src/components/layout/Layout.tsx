@@ -6,7 +6,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div>
       <Header />
-      <div className="flex flex-col gap-8 px-4"> {children}</div>
+      <div className="flex flex-col gap-8"> {children}</div>
       <Footer />
     </div>
   );

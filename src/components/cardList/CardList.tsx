@@ -13,13 +13,14 @@ const CardList = () => {
   }, []);
 
   const numberOfPage: number = Math.ceil(productsData.length / 16);
-  console.log(selectedPage * 16 + 1);
 
-  const onHandleChangePage: any = (what: string) => {
-    if (what == "next") {
+  const onHandleChangePage: any = (type: string) => {
+    if (type == "next") {
       selectedPage + 1 != numberOfPage && setSelectedPage(selectedPage + 1);
+      window.scrollTo(0, 0);
     } else {
       selectedPage > 0 && setSelectedPage(selectedPage - 1);
+      window.scrollTo(0, 0);
     }
   };
 

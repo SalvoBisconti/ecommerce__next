@@ -1,6 +1,8 @@
 import { BsBoxSeam } from "react-icons/bs";
 import Button from "../button";
 import { AiTwotoneSafetyCertificate } from "react-icons/ai";
+import { IoMdHeartEmpty } from "react-icons/io";
+import { CgArrowsExpandLeft } from "react-icons/cg";
 
 const PageCard = () => {
   const a = {
@@ -25,23 +27,26 @@ const PageCard = () => {
       updatedAt: "2023-12-28T00:48:04.000Z",
     },
   };
-
   return (
-    <div className="flex flex-col  py-4">
+    <div className="flex flex-col py-4 ">
       <div className="flex flex-col gap- md:flex-row md:justify-center  ">
-        <div className="flex gap-4 overflow-auto md:w-[50%] md:flex-col md:ml-14 ">
-          <img
-            src={a.images[0]}
-            alt={a.title}
-            className="w-[90%] shadow-sm shadow-stronGray md:w-[90%] md:max-w-[600px]"
-          />
+        <div className="flex gap-4 overflow-auto md:w-[50%] md:flex-col md:ml-14 ml-4  ">
+          <div className="relative w-[90%] shadow-sm shadow-stronGray md:w-[90%] md:max-w-[600px] shrink-0 ">
+            <img
+              src={a.images[0]}
+              alt={a.title}
+              className="w-[100%] h-[100%]"
+            />
+            <IoMdHeartEmpty className="absolute text-[40px] z-20 top-4 right-4 bg-second rounded-full p-[5px] " />
+            <CgArrowsExpandLeft className="absolute text-[34px] z-20 bottom-4 right-4 " />
+          </div>
           <img
             src={a.images[1]}
             alt={a.title}
             className="w-[90%] shadow-sm shadow-stronGray md:w-[50%] md:max-w-[200px] "
           />
         </div>
-        <div className="flex flex-col gap-2 md:w-[50%]">
+        <div className="flex flex-col gap-2 md:w-[50%] px-4">
           <h3 className="mt-4">Home / Donna / {a.title}</h3>
           <h3 className="font-bold">{a.category.name}</h3>
           <h2 className="font-bold text-[32px]"> {a.title}</h2>
@@ -103,7 +108,7 @@ const PageCard = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 md:px-16 md:pt-10">
+      <div className="flex flex-col gap-3 md:px-16 md:pt-10 px-4">
         <h2 className="font-bold text-[30px]">Descrizione</h2>
         <p>{a.description}</p>
 

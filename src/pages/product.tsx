@@ -20,7 +20,7 @@ export default function Product() {
     <main className={`flex min-h-screen flex-col items-center gap-8 bg-first `}>
       <Layout>
         <PageCard />
-        <h2 className="font-bold text-[28px]"> Guarda anche</h2>
+        <h2 className="font-bold text-[28px] p-4"> Guarda anche</h2>
         <Carousel />
       </Layout>
     </main>
