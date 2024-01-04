@@ -3,12 +3,15 @@ import { MdAccountCircle } from "react-icons/md";
 import { MdFavoriteBorder } from "react-icons/md";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { RxHamburgerMenu } from "react-icons/rx";
+import Link from "next/link";
 
 const Header = () => {
   return (
     <div className=" h-[100px] w-screen flex flex-col justify-between md:flex-row py-1 gap-2 ">
       <div className="flex justify-between items-center  w-screen h-[50%] md:h-[100%]  p-2 ">
-        <h2 className=" text-red text-[30px] font-bold ">LOGO</h2>
+        <Link className=" text-red text-[30px] font-bold " href="/">
+          LOGO
+        </Link>
         <SearchEl
           display="md:flex hidden"
           icon="flex"

@@ -3,7 +3,7 @@ import SearchEl from "../searchEl";
 
 const NewletterArea = () => {
   return (
-    <div className="w-screen bg-stronGray  flex flex-col p-6 gap-4 md:flex-row md:p-10 md:justify-center md:items-center -mb-10">
+    <div className="w-screen bg-stronGray  flex flex-col p-6 gap-4 md:flex-row md:p-10 md:justify-center md:items-center -mb-4">
       <h2 className="font-bold text-[30px] w-[200px]">
         Iscriviti alla Newsletters
       </h2>

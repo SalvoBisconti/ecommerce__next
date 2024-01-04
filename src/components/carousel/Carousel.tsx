@@ -9,14 +9,14 @@ const Carousel = () => {
   const [productsCarouselData, setProductsCarouselData] = useState<cardType[]>(
     []
   );
-  const ref = useRef(0);
+  // const ref = useRef(0);
 
   useEffect(() => {
     GET().then((data) => setProductsCarouselData(data));
   }, []);
 
   const a: any = new Array(3);
-  const b: number[] = [1, 2, 3, 4, 5, 6];
+  const indexArray: number[] = [1, 2, 3, 4, 5, 6];
   // const next = (): void =>
   //   carouselPosition > 2
   //     ? setCarouselPosition(0)
@@ -38,13 +38,13 @@ const Carousel = () => {
   return (
     <div className="flex flex-col gap-7 w-[90vw] h-[500px] ">
       <div className="flex gap-4 overflow-auto">
-        {productsCarouselData.length &&
-          b.map((element) => (
+        {/* {productsCarouselData.length &&
+          indexArray.map((element) => (
             <Card
               data={productsCarouselData[element]}
               key={productsCarouselData[element].id}
             />
-          ))}
+          ))} */}
         {/* {productsCarouselData.length && (
           <Card
             data={productsCarouselData[2]}
@@ -77,7 +77,7 @@ const Carousel = () => {
             carouselPosition == 3 && "bg-red"
           } `}
           onClick={() => onHandleClick(3)}
-        ></button>{" "}
+        ></button>
       </div>
     </div>
   );
