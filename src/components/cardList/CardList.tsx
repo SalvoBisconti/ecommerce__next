@@ -16,7 +16,11 @@ const CardList = () => {
   console.log(selectedPage * 16 + 1);
 
   const onHandleChangePage: any = (what: string) => {
-    selectedPage != numberOfPage && setSelectedPage(selectedPage + 1);
+    if (what == "next") {
+      selectedPage + 1 != numberOfPage && setSelectedPage(selectedPage + 1);
+    } else {
+      selectedPage > 0 && setSelectedPage(selectedPage - 1);
+    }
   };
 
   return (
@@ -28,14 +32,14 @@ const CardList = () => {
         ))}
 
       <div className="flex justify-center items-center gap-2 ">
-        <IoIosArrowBack className=" text-black text-[26px] cursor-pointer" />
-        <h3>
-          {" "}
-          {`${selectedPage == 0 ? "1" : selectedPage} di ${numberOfPage}`}
-        </h3>
+        <IoIosArrowBack
+          className=" text-black text-[26px] cursor-pointer"
+          onClick={() => onHandleChangePage("prev")}
+        />
+        <h3> {`${selectedPage + 1} di ${numberOfPage}`}</h3>
         <IoIosArrowBack
           className="rotate-180 text-black text-[26px] cursor-pointer "
-          onClick={onHandleChangePage}
+          onClick={() => onHandleChangePage("next")}
         />
       </div>
     </div>
