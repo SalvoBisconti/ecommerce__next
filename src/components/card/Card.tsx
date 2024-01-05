@@ -1,6 +1,7 @@
 import { cardType } from "@/mocks/types";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { useRouter } from "next/router";
+import { toPercentuagePrice } from "@/utils/funcs";
 
 export const Card = (props: { data: cardType }) => {
   const { data } = props;
@@ -18,7 +19,7 @@ export const Card = (props: { data: cardType }) => {
 
   return (
     <div
-      className="h-[400px] w-[315px] min-w-[315px] relative flex flex-col justify-center shadow-md rounded-md cursor-pointer  "
+      className="h-[450px] w-[315px] min-w-[315px] relative flex flex-col justify-center shadow-md rounded-md cursor-pointer  "
       onClick={onHandleOpenSingleItem}
     >
       <div className="h-[50%] relative ">
@@ -37,10 +38,20 @@ export const Card = (props: { data: cardType }) => {
       </div>
       <div className=" h-[50%] flex flex-col justify-center items-center">
         <h3 className="font-bold"> {data.title}</h3>
-        <h3 className="p-4">{data.description}</h3>
-        <h4>
-          {data.price} {"€"}
-        </h4>
+        <h3 className="p-4">
+          {data.description.split(" ").slice(0, 5).join(" ")} {". . ."}
+        </h3>
+        <h3 className="text-red text-[20px] mb-1 ">
+          {toPercentuagePrice(data.price, 15).toFixed(2)} {"€"}
+        </h3>
+        <div className="flex gap-2 items-center ">
+          <h3 className="line-through text-[18px]">
+            {data.price.toFixed(2)} {"€"}
+          </h3>
+          <h3 className="bg-green text-first px-2 py-[1px] rounded text-[15px] font-semibold">
+            -15%
+          </h3>
+        </div>
       </div>
     </div>
   );

@@ -5,3 +5,6 @@ export const GET = async (endpoint: any = "") => {
   const data = await res.json();
   return data;
 };
+
+export const toPercentuagePrice = (price: number, percentuage: number) =>
+  price - (price * percentuage) / 100;

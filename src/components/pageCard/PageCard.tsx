@@ -4,6 +4,7 @@ import Line from "../line";
 import { AiTwotoneSafetyCertificate } from "react-icons/ai";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { CgArrowsExpandLeft } from "react-icons/cg";
+import { toPercentuagePrice } from "@/utils/funcs";
 
 const PageCard = () => {
   const a = {
@@ -57,11 +58,15 @@ const PageCard = () => {
           </div>
           <div className="flex justify-between mb-5">
             <h3 className="text-red text-[20px]">
-              {a.price} {"€"}
+              {toPercentuagePrice(a.price, 15).toFixed(2)} {"€"}
             </h3>
             <div className="flex gap-2 items-center">
-              <h3 className="line-through text-[19px]">{a.price}</h3>
-              <h3 className="bg-green text-first px-3 py-1 rounded">-15%</h3>
+              <h3 className="line-through text-[19px]">
+                {a.price.toFixed(2)} {"€"}
+              </h3>
+              <h3 className="bg-green text-first px-3 py-1 rounded font-semibold">
+                -15%
+              </h3>
             </div>
           </div>
           <Line width="w-[99%]" selfCenter="" />

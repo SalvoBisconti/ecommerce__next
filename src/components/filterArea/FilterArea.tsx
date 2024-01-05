@@ -17,7 +17,7 @@ const FilterArea = () => {
           {filterName.length > 0 &&
             filterName.map((name, index) => (
               <h2
-                className={`flex justify-between items-center w-[200px] border rounded border-stronGray p-3 cursor-pointer ${
+                className={`flex justify-between items-center w-[200px] border rounded border-trasparent p-3 cursor-pointer ${
                   isSelected == name && "text-red border-2 border-red font-bold"
                 } `}
                 key={index}

@@ -17,6 +17,7 @@ const Header = () => {
             itemName={["Chi siamo", "Community", "Brand"]}
             flexOption="flex gap-5"
             fontOption=""
+            showLine="hidden"
           />
           <h3 className="">
             ITA
@@ -44,7 +45,12 @@ const Header = () => {
             <MdAccountCircle className="cursor-pointer text-[26px]" />
             <MdFavoriteBorder className="cursor-pointer text-[26px]" />
           </div>
-          <HiOutlineShoppingCart className="cursor-pointer text-[26px]" />
+          <div className="relative">
+            <HiOutlineShoppingCart className="cursor-pointer text-[26px]" />
+            <h3 className="absolute -top-[6px] -right-[8px] text-[13px] z-10 rounded-full bg-red px-[5px] text-first">
+              2
+            </h3>
+          </div>
         </div>
       </div>
       <div className=" w-screen h-[50%]  md:hidden flex gap-[5%] items-start px-2 ">
@@ -66,6 +72,7 @@ const Header = () => {
           itemName={["DONNA", "UOMO", "BAMBINI", "TUTTI GLI ARTICOLI"]}
           flexOption="flex gap-4 p-2"
           fontOption="font-semibold text-[14px]"
+          showLine="block"
         />
         <Line width="w-screen" selfCenter="" />
       </div>

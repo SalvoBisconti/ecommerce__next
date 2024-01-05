@@ -20,7 +20,7 @@ const config: Config = {
       red: "#e22018",
       black: "#100c08",
       stronGray: "#cacaca",
-      green: "#008000",
+      green: "#4f9d51",
       lightBlack: "#4a4a4a",
     },
     fontSize: {
