@@ -5,7 +5,6 @@ import { toPercentuagePrice } from "@/utils/funcs";
 
 export const Card = (props: { data: cardType }) => {
   const { data } = props;
-
   const router = useRouter();
 
   const onHandleOpenSingleItem = (): void => {

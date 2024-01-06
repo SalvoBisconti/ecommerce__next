@@ -1,3 +1,4 @@
+import { cardType } from "@/mocks/types";
 import { useState } from "react";
 
 const List = (props: {
@@ -6,12 +7,39 @@ const List = (props: {
   fontOption: string;
   showLine: string;
   visibility: string;
+  productsData: cardType[];
+  setProductsData: React.Dispatch<React.SetStateAction<any>>;
 }) => {
-  const { itemName, flexOption, fontOption, showLine, visibility } = props;
+  const {
+    itemName,
+    flexOption,
+    fontOption,
+    showLine,
+    visibility,
+    setProductsData,
+    productsData,
+  } = props;
   const [selectedCategory, setSelectedCategory] = useState<string>("DONNA");
 
-  const onClickSelect: any = (category: string) =>
+  const onClickSelect: any = (category: string) => {
     setSelectedCategory(category);
+
+    itemName.map(
+      (element) =>
+        (category == "PREZZO MINORE" &&
+          setProductsData(
+            productsData.slice(0).sort((a, b) => (b.price >= a.price ? -1 : 0))
+          )) ||
+        (category == "PREZZO MAGGIORE" &&
+          setProductsData(
+            productsData.slice(0).sort((a, b) => (a.price >= b.price ? -1 : 0))
+          )) ||
+        (category == "NOME" &&
+          setProductsData(
+            productsData.slice(0).sort((a, b) => (a.title <= b.title ? -1 : 0))
+          ))
+    );
+  };
 
   return (
     <ul className={`md:text-right ${flexOption} ${fontOption} ${visibility} `}>

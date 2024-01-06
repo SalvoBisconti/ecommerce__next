@@ -15,7 +15,7 @@ export default function Product() {
     if (router.isReady) {
       GET(id).then((data) => setSingleProductData(data));
     }
-  }, [router.isReady]);
+  }, [router.isReady, id]);
 
   return (
     <main className={`flex min-h-screen flex-col items-center gap-8 bg-first `}>

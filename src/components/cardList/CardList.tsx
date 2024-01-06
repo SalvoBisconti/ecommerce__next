@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { cardType } from "@/mocks/types";
 import { IoIosArrowBack } from "react-icons/io";
 import { BsFillTriangleFill } from "react-icons/bs";
+
 import List from "../list";
 import Line from "../line";
 
@@ -54,6 +55,8 @@ const CardList = () => {
             fontOption="font-semibold text-[14px]"
             showLine=""
             visibility="hidden md:flex"
+            productsData={productsData}
+            setProductsData={setProductsData}
           />
         </div>
         <Line width="w-screen" selfCenter="" />
