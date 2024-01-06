@@ -19,6 +19,8 @@ const Header = () => {
             fontOption=""
             showLine="hidden"
             visibility=""
+            productsData=""
+            setProductsData=""
           />
           <h3 className="">
             ITA
@@ -75,6 +77,8 @@ const Header = () => {
           fontOption="font-semibold text-[14px]"
           showLine="block"
           visibility="px-[60px]"
+          productsData=""
+          setProductsData=""
         />
         <Line width="w-screen" selfCenter="" />
       </div>

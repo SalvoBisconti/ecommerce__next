@@ -28,15 +28,27 @@ const List = (props: {
       (element) =>
         (category == "PREZZO MINORE" &&
           setProductsData(
-            productsData.slice(0).sort((a, b) => (b.price >= a.price ? -1 : 0))
+            productsData
+              .slice(0)
+              .sort((a: { price: number }, b: { price: number }) =>
+                b.price >= a.price ? -1 : 0
+              )
           )) ||
         (category == "PREZZO MAGGIORE" &&
           setProductsData(
-            productsData.slice(0).sort((a, b) => (a.price >= b.price ? -1 : 0))
+            productsData
+              .slice(0)
+              .sort((a: { price: number }, b: { price: number }) =>
+                a.price >= b.price ? -1 : 0
+              )
           )) ||
         (category == "NOME" &&
           setProductsData(
-            productsData.slice(0).sort((a, b) => (a.title <= b.title ? -1 : 0))
+            productsData
+              .slice(0)
+              .sort((a: { title: number }, b: { title: number }) =>
+                a.title <= b.title ? -1 : 0
+              )
           ))
     );
   };
