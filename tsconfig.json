@@ -17,6 +17,12 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/store/AppWrapper.js",
+    "src/store/AppWrapper.Js"
+  ],
   "exclude": ["node_modules"]
 }

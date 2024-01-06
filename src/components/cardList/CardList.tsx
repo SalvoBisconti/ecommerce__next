@@ -3,6 +3,9 @@ import { GET } from "@/utils/funcs";
 import { useState, useEffect } from "react";
 import { cardType } from "@/mocks/types";
 import { IoIosArrowBack } from "react-icons/io";
+import { BsFillTriangleFill } from "react-icons/bs";
+import List from "../list";
+import Line from "../line";
 
 const CardList = () => {
   const [productsData, setProductsData] = useState<cardType[]>([]);
@@ -25,8 +28,38 @@ const CardList = () => {
   };
 
   return (
-    <div className="flex flex-col gap-12">
-      <div className="flex flex-col justify-center items-center flex-wrap gap-8 md:flex-row">
+    <div className="flex flex-col gap-12  ">
+      <div className="md:[&>div]:px-[60px]">
+        <div className="flex gap-2 items-center px-4  ">
+          <h3>ORDINA PER: </h3>
+          <div className="relative">
+            <h3 className="font-bold text-[15px] md:hidden flex items-center gap-2 p-3 text-red ">
+              POPOLARITA'
+              <span>
+                <BsFillTriangleFill className="rotate-180 text-[12px] text-lightBlack" />
+              </span>
+            </h3>
+            <hr
+              className={`h-[3px] w-[100%] bg-red absolute -bottom-[2px] border-0 `}
+            />
+          </div>
+          <List
+            itemName={[
+              "POPOLARITA'",
+              "PREZZO MINORE",
+              "PREZZO MAGGIORE",
+              "NOME",
+            ]}
+            flexOption="flex gap-4 p-2"
+            fontOption="font-semibold text-[14px]"
+            showLine=""
+            visibility="hidden md:flex"
+          />
+        </div>
+        <Line width="w-screen" selfCenter="" />
+      </div>
+
+      <div className="flex flex-col justify-center items-center flex-wrap gap-8 md:flex-row md:px-[20px]">
         {productsData
           .slice(selectedPage * 16, (selectedPage + 1) * 16)
           .map((product) => (

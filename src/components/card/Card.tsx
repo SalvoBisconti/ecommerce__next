@@ -8,7 +8,7 @@ export const Card = (props: { data: cardType }) => {
 
   const router = useRouter();
 
-  const onHandleOpenSingleItem = (): any => {
+  const onHandleOpenSingleItem = (): void => {
     router.push({
       pathname: "product",
       query: {
@@ -19,7 +19,7 @@ export const Card = (props: { data: cardType }) => {
 
   return (
     <div
-      className="h-[450px] w-[315px] min-w-[315px] relative flex flex-col justify-center shadow-md rounded-md cursor-pointer  "
+      className="h-[450px] w-[320px] min-w-[310px] relative flex flex-col justify-center shadow-md rounded-md cursor-pointer  "
       onClick={onHandleOpenSingleItem}
     >
       <div className="h-[50%] relative ">

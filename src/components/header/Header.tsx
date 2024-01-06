@@ -12,12 +12,13 @@ const Header = () => {
   return (
     <div className=" h-[100px] md:h-[180px] w-screen flex flex-col justify-between py-1 gap-3">
       <div className="hidden md:block w-screen ">
-        <div className="flex justify-between p-2  ">
+        <div className="flex justify-between p-2 px-[60px]">
           <List
             itemName={["Chi siamo", "Community", "Brand"]}
             flexOption="flex gap-5"
             fontOption=""
             showLine="hidden"
+            visibility=""
           />
           <h3 className="">
             ITA
@@ -29,7 +30,7 @@ const Header = () => {
         <Line width="w-screen" selfCenter="" />
       </div>
 
-      <div className="flex justify-between items-center  w-screen h-[50%] md:h-[100%]  p-2 ">
+      <div className="flex justify-between items-center  w-screen h-[50%] md:h-[100%]  py-2 px-3 md:px-[60px]">
         <Link className=" text-red text-[30px] font-bold " href="/">
           LOGO
         </Link>
@@ -73,6 +74,7 @@ const Header = () => {
           flexOption="flex gap-4 p-2"
           fontOption="font-semibold text-[14px]"
           showLine="block"
+          visibility="px-[60px]"
         />
         <Line width="w-screen" selfCenter="" />
       </div>

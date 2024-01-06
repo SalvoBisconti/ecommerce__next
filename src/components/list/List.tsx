@@ -5,15 +5,16 @@ const List = (props: {
   flexOption: string;
   fontOption: string;
   showLine: string;
+  visibility: string;
 }) => {
-  const { itemName, flexOption, fontOption, showLine } = props;
+  const { itemName, flexOption, fontOption, showLine, visibility } = props;
   const [selectedCategory, setSelectedCategory] = useState<string>("DONNA");
 
   const onClickSelect: any = (category: string) =>
     setSelectedCategory(category);
 
   return (
-    <ul className={`md:text-right ${flexOption} ${fontOption}`}>
+    <ul className={`md:text-right ${flexOption} ${fontOption} ${visibility} `}>
       {itemName.length > 0 &&
         itemName.map((element, index) => {
           return (

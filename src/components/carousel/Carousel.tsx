@@ -1,83 +1,69 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { cardType } from "@/mocks/types";
 import { GET } from "@/utils/funcs";
-
 import Card from "../card";
+import { IoIosArrowBack } from "react-icons/io";
 
 const Carousel = () => {
-  const [carouselPosition, setCarouselPosition] = useState<number>(1);
+  const [carouselPosition, setCarouselPosition] = useState<number>(0);
   const [productsCarouselData, setProductsCarouselData] = useState<cardType[]>(
     []
   );
-  // const ref = useRef(0);
 
   useEffect(() => {
     GET().then((data) => setProductsCarouselData(data));
   }, []);
 
-  const a: any = new Array(3);
-  const indexArray: number[] = [1, 2, 3, 4, 5, 6];
-  // const next = (): void =>
-  //   carouselPosition > 2
-  //     ? setCarouselPosition(0)
-  //     : setCarouselPosition((prev) => prev + 1);
+  const indexArray: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const buttonArray = [1, 2, 3];
 
-  // const prev = (): void =>
-  //   carouselPosition === 0
-  //     ? setCarouselPosition(3)
-  //     : setCarouselPosition((prev) => prev - 1);
+  const nextPage = (): any =>
+    carouselPosition < 2 && setCarouselPosition((prev) => prev + 1);
+
+  const prevPage = (): any =>
+    carouselPosition > 0 && setCarouselPosition((prev) => prev - 1);
 
   const onHandleClick: any = (position: number) => {
     setCarouselPosition(position);
   };
 
-  // const scroll: any = (scrollOffset: any ) => {
-  //   ref.current.scrollLeft += scrollOffset;
-  // };
-
   return (
-    <div className="flex flex-col gap-7 w-[90vw] h-[500px] ">
-      <div className="flex gap-4 overflow-auto">
-        {/* {productsCarouselData.length &&
-          indexArray.map((element) => (
-            <Card
-              data={productsCarouselData[element]}
-              key={productsCarouselData[element].id}
-            />
-          ))} */}
-        {/* {productsCarouselData.length && (
-          <Card
-            data={productsCarouselData[2]}
-            key={productsCarouselData[2].id}
-          />
-        )} */}
+    <div
+      className="flex flex-col gap-7 w-[100vw] h-[540px] md:w-[98vw]  ml-10 md:ml-0  "
+      id="ciao"
+    >
+      <div className="flex items-center justify-between gap-3 ">
+        <IoIosArrowBack
+          className="hidden md:flex text-[48px] font-extrabold cursor-pointer"
+          onClick={() => prevPage()}
+        />
+        <div className="flex gap-4 overflow-auto p-2 ">
+          {productsCarouselData.length &&
+            indexArray
+              .slice(carouselPosition * 4, (carouselPosition + 1) * 4)
+              .map((element) => (
+                <Card
+                  data={productsCarouselData[element]}
+                  key={productsCarouselData[element].id}
+                />
+              ))}
+        </div>
+        <IoIosArrowBack
+          className="hidden md:flex text-[48px] font-extrabold rotate-180 cursor-pointer"
+          onClick={() => nextPage()}
+        />
       </div>
-      <div className="flex justify-evenly self-center w-[70px]">
-        {/* {a.map((element: any) => {
-          <button
-            className="h-4 w-4 bg-red rounded-full"
-            id={element}
-          ></button>;
-          console.log(a);
-        })} */}
-        <button
-          className={`h-[14px] w-[14px] bg-stronGray rounded-full cursor-pointer ${
-            carouselPosition == 1 && "bg-red"
-          } `}
-          onClick={() => onHandleClick(1)}
-        ></button>
-        <button
-          className={`h-[14px] w-[14px] bg-stronGray rounded-full cursor-pointer ${
-            carouselPosition == 2 && "bg-red"
-          } `}
-          onClick={() => onHandleClick(2)}
-        ></button>
-        <button
-          className={`h-[14px] w-[14px] bg-stronGray rounded-full cursor-pointer ${
-            carouselPosition == 3 && "bg-red"
-          } `}
-          onClick={() => onHandleClick(3)}
-        ></button>
+      <div className="flex justify-evenly self-center w-[70px] ">
+        {buttonArray.length > 0 &&
+          buttonArray.map((element: any, index: number) => (
+            <button
+              className={`h-[12px] w-[12px]  rounded-full cursor-pointer ${
+                carouselPosition == index ? "bg-red" : "bg-stronGray"
+              } `}
+              id={element}
+              onClick={() => onHandleClick(index)}
+            ></button>
+          ))}
       </div>
     </div>
   );
