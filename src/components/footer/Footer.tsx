@@ -14,6 +14,9 @@ const Footer = () => {
             flexOption=""
             fontOption=""
             showLine="hidden"
+            visibility=""
+            productsData=""
+            setProductsData=""
           />
           <List
             itemName={[
@@ -25,12 +28,18 @@ const Footer = () => {
             flexOption=""
             fontOption=""
             showLine="hidden"
+            visibility=""
+            productsData=""
+            setProductsData=""
           />
           <List
             itemName={["Privacy Policy", "Cookie Policy", "Credits"]}
             flexOption=""
             fontOption=""
             showLine="hidden"
+            visibility=""
+            productsData=""
+            setProductsData=""
           />
         </div>
       </div>

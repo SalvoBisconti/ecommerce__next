@@ -7,8 +7,8 @@ const List = (props: {
   fontOption: string;
   showLine: string;
   visibility: string;
-  productsData: cardType[];
-  setProductsData: React.Dispatch<React.SetStateAction<any>>;
+  productsData: cardType[] | any;
+  setProductsData: React.Dispatch<React.SetStateAction<any>> | any;
 }) => {
   const {
     itemName,
