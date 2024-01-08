@@ -49,6 +49,14 @@ const List = (props: {
               .sort((a: { title: number }, b: { title: number }) =>
                 a.title <= b.title ? -1 : 0
               )
+          )) ||
+        (category == "POPOLARITA'" &&
+          setProductsData(
+            productsData
+              .slice(0)
+              .sort((a: { updatedAt: number }, b: { updatedAt: number }) =>
+                a.updatedAt <= b.updatedAt ? -1 : 0
+              )
           ))
     );
   };

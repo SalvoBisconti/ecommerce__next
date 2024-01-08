@@ -11,6 +11,7 @@ import Line from "../line";
 const CardList = () => {
   const [productsData, setProductsData] = useState<cardType[]>([]);
   const [selectedPage, setSelectedPage] = useState<number>(0);
+  const [arrowDown, setArrowDown] = useState<boolean>(true);
 
   useEffect(() => {
     GET().then((data) => setProductsData(data));
@@ -28,16 +29,32 @@ const CardList = () => {
     }
   };
 
+  const onHandleSort: any = () => {
+    setProductsData(
+      productsData
+        .slice(0)
+        .sort((a, b) => (a.updatedAt <= b.updatedAt ? -1 : 0))
+    );
+    setArrowDown((prev) => !prev);
+  };
+
   return (
     <div className="flex flex-col gap-12  ">
       <div className="md:[&>div]:px-[60px]">
         <div className="flex gap-2 items-center px-4  ">
           <h3>ORDINA PER: </h3>
           <div className="relative">
-            <h3 className="font-bold text-[15px] md:hidden flex items-center gap-2 p-3 text-red ">
+            <h3
+              className="font-bold text-[15px] md:hidden flex items-center gap-2 p-3 text-red cursor-pointer "
+              onClick={onHandleSort}
+            >
               POPOLARITA'
               <span>
-                <BsFillTriangleFill className="rotate-180 text-[12px] text-lightBlack" />
+                <BsFillTriangleFill
+                  className={`rotate-180 text-[12px] text-lightBlack transition-all ${
+                    !arrowDown && "rotate-0"
+                  }`}
+                />
               </span>
             </h3>
             <hr
