@@ -4,6 +4,7 @@ interface categoryType {
   image: string;
 }
 export interface cardType {
+  updatedAt: any;
   id: number;
   title: string;
   price: number;
