@@ -18,7 +18,7 @@ export const Card = (props: { data: cardType }) => {
 
   return (
     <div
-      className="h-[450px] w-[320px] min-w-[310px] relative flex flex-col justify-center shadow-md rounded-md cursor-pointer   "
+      className="h-[450px] w-[320px] min-w-[310px] relative flex flex-col justify-center shadow-md rounded-md cursor-pointer hover:border border-stronGray   "
       onClick={onHandleOpenSingleItem}
     >
       <div className="h-[50%] relative ">
