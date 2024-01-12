@@ -14,7 +14,7 @@ export const imageWithFallback = (src: any, nameClass: string) => {
   const imgRef: any = useRef();
   const onImageError = () =>
     (imgRef.current.src =
-      "https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg");
+      "https://jawahar-book-centre.com/wp-content/uploads/2020/10/image-not-available.jpg");
 
   return (
     <img ref={imgRef} src={src} onError={onImageError} className={nameClass} />
