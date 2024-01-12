@@ -1,5 +1,6 @@
 import Layout from "@/components/layout";
 import { useRouter } from "next/router";
+// import { GET } from "@/utils/funcs";
 import { GET } from "@/utils/funcs";
 import { useState } from "react";
 import React from "react";

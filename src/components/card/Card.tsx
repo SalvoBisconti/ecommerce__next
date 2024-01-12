@@ -2,6 +2,7 @@ import { cardType } from "@/mocks/types";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { useRouter } from "next/router";
 import { toPercentuagePrice } from "@/utils/funcs";
+import { imageWithFallback } from "@/utils/funcs";
 
 export const Card = (props: { data: cardType }) => {
   const { data } = props;
@@ -23,11 +24,10 @@ export const Card = (props: { data: cardType }) => {
     >
       <div className="h-[50%] relative ">
         <div className="z-10 absolute top-0 right-0 w-full h-full bg-[#00000015]"></div>
-        <img
-          className="w-[100%] h-[100%] object-fill rounded-t-md "
-          src={data.images[0]}
-          alt={data.title}
-        />
+        {imageWithFallback(
+          data.images[0],
+          "w-[100%] h-[100%] object-fill rounded-t-md"
+        )}
         <div className="h-[35px] w-[35px] absolute rounded-full bg-second top-2 right-2 flex justify-center items-center z-20 ">
           <IoMdHeartEmpty className="text-[26px]" />
         </div>

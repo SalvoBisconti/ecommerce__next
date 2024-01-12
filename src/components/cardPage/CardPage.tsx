@@ -6,6 +6,7 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { CgArrowsExpandLeft } from "react-icons/cg";
 import { BsFillTriangleFill } from "react-icons/bs";
 import { toPercentuagePrice } from "@/utils/funcs";
+import { imageWithFallback } from "@/utils/funcs";
 import { cardType } from "@/mocks/types";
 
 const CardPage = (props: { data: cardType }) => {
@@ -16,11 +17,8 @@ const CardPage = (props: { data: cardType }) => {
       <div className="flex flex-col gap- md:flex-row md:justify-center  ">
         <div className="flex gap-4 overflow-auto md:w-[50%] md:flex-col md:ml-14 ml-4  ">
           <div className="relative w-[90%] shadow-sm shadow-stronGray md:w-[90%] md:max-w-[600px] shrink-0 ">
-            <img
-              src={data?.images[0]}
-              alt={data?.title}
-              className="w-[100%] h-[100%]"
-            />
+            {imageWithFallback(data?.images[0], "w-[100%] h-[100%]")}
+
             <IoMdHeartEmpty className="absolute text-[40px] z-20 top-4 right-4 bg-second rounded-full p-[5px] " />
             <CgArrowsExpandLeft className="absolute text-[34px] z-20 bottom-4 right-4 " />
           </div>
