@@ -44,7 +44,7 @@ const Carousel = () => {
               .map((element) => (
                 <Card
                   data={productsCarouselData[element]}
-                  key={productsCarouselData[element].id}
+                  key={productsCarouselData[element]?.id}
                 />
               ))}
         </div>

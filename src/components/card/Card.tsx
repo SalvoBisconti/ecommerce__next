@@ -25,7 +25,7 @@ export const Card = (props: { data: cardType }) => {
       <div className="h-[50%] relative ">
         <div className="z-10 absolute top-0 right-0 w-full h-full bg-[#00000015]"></div>
         {imageWithFallback(
-          data.images[0],
+          data?.images[0],
           "w-[100%] h-[100%] object-fill rounded-t-md"
         )}
         <div className="h-[35px] w-[35px] absolute rounded-full bg-second top-2 right-2 flex justify-center items-center z-20 ">
@@ -37,19 +37,19 @@ export const Card = (props: { data: cardType }) => {
       </div>
       <div className=" h-[50%] flex flex-col justify-center items-center gap-7 p-4">
         <div className="flex flex-col items-center gap-[2px]">
-          <h3 className="font-light">{data.category.name}</h3>
-          <h3 className="font-bold"> {data.title}</h3>
+          <h3 className="font-light">{data?.category?.name}</h3>
+          <h3 className="font-bold"> {data?.title}</h3>
           <h3 className="text-[#666666]">
-            {data.category.id} {data.category.id == 1 ? "colore" : "colori"}
+            {data?.category.id} {data?.category.id == 1 ? "colore" : "colori"}
           </h3>
         </div>
         <div className="flex flex-col items-center">
           <h3 className="text-red text-[20px] mb-1 ">
-            {toPercentuagePrice(data.price, 15).toFixed(2)} {"€"}
+            {toPercentuagePrice(data?.price, 15).toFixed(2)} {"€"}
           </h3>
           <div className="flex gap-2 items-center ">
             <h3 className="line-through text-[18px]">
-              {data.price.toFixed(2)} {"€"}
+              {data?.price.toFixed(2)} {"€"}
             </h3>
             <h3 className="bg-green text-first px-2 py-[1px] rounded text-[15px] font-semibold">
               -15%
