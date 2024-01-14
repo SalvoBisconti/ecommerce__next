@@ -21,11 +21,15 @@ const CardList = () => {
 
   const onHandleChangePage: any = (type: string) => {
     if (type == "next") {
-      selectedPage + 1 != numberOfPage && setSelectedPage(selectedPage + 1);
-      window.scrollTo(0, 0);
+      if (selectedPage + 1 != numberOfPage) {
+        setSelectedPage(selectedPage + 1);
+        window.scrollTo(0, 0);
+      }
     } else {
-      selectedPage > 0 && setSelectedPage(selectedPage - 1);
-      window.scrollTo(0, 0);
+      if (selectedPage > 0) {
+        setSelectedPage(selectedPage - 1);
+        window.scrollTo(0, 0);
+      }
     }
   };
 

@@ -61,6 +61,7 @@ const Carousel = () => {
                 carouselPosition == index ? "bg-red" : "bg-stronGray"
               } `}
               id={element}
+              key={index}
               onClick={() => onHandleClick(index)}
             ></button>
           ))}
